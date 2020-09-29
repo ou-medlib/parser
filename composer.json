@@ -1,0 +1,33 @@
+{
+    "name": "ouwbmedlib/parser",
+    "description": "parses csv textbook file into web display",
+    "type": "library",
+    "readme": "README.md",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Keith Engwall",
+            "email": "engwall@oakland.edu"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "league/csv": "^9.6",
+        "respect/validation": "^2.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "filp/whoops": "^2.7",
+        "phpunit/phpunit": "^9.3.11"
+    },
+    "autoload": {
+        "psr-4": {"OUWBMedlib\\Parser\\": "src/parser"}
+    },
+    "autoload-dev": {
+        "psr-4": {"OUWBMedlib\\Parser\\": "tests/parser" }
+    },
+    "config": {
+        "bin-dir": "vendor/bin"
+    }
+
+}

@@ -1,0 +1,37 @@
+{
+  "paths": {
+    "recordData": "/../../data/records.csv.example",
+    "pageMap": "/../../data/page_map.json.example"
+  },
+  "groupBy": {
+    "field": "Course",
+    "delim": "|"
+  },
+  "sortField": "Author",
+  "validation": {
+    "Title": {
+      "method": "stringVal"
+    },
+    "Author": {
+      "method": "stringVal"
+    },
+    "Required": {
+      "method": "in",
+      "args": [
+        "Required",
+        "Recommended"
+      ]
+    },
+    "URL": {
+      "method": "url"
+    },
+    "Year": {
+      "method": "date",
+      "args": ["Y"]
+    },
+    "Edition": {
+      "method": "regex",
+      "args": ["/1st|2nd|3rd|[4-9]th|[1-9][0-9]th/"]
+    }
+  }
+}

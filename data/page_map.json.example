@@ -1,0 +1,15 @@
+{
+  "pages": {
+    "YR1": {
+      "AFCP": "Anatomical Foundations of Clinical Practice",
+      "APM12": "Art &amp; Practice of Medicine 1 &amp; 2",
+      "BFCP": "Biomedical Foundations of Clinical Practice",
+      "CARDIO": "Cardiovascular",
+      "HUM": "Medical Humanities &amp; Clinical Bioethics"
+    },
+    "M2": {
+      "APM345": "Art &amp; Practice of Medicine 3, 4 &amp; 5",
+      "HUM": "Medical Humanities &amp; Clinical Bioethics"
+    }
+  }
+}
