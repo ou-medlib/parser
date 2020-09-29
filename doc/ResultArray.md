@@ -6,6 +6,17 @@ Author: [Keith Engwall <engwall@oakland.edu>](mailto:engwall@oakland.edu)
 License: [MIT](https://opensource.org/licenses/MIT)
 
 ## Result Array Structure
+* [Array Structure for page ID](#Array Structure for page ID)
+    * [Result Array](#Result Array)
+    * [Group Data Array](#Group Data Array)
+    * [Record List Array](#Record List Array)
+    * [Record Array](#Record Array)
+* [Result Example](#Result Example)
+* [Array Structure for DEBUG](#Array Structure for DEBUG)
+    * [Debug Result Array](#Debug Result Array)
+    * [Record Array for Record List](#Record Array for Record List)
+    * [Record Array for Invalid List](#Record Array for Invalid List)
+    
 The result array will be in one of two formats, depending
 on whether you pass a page ID or the "DEBUG" string.
 
@@ -175,7 +186,7 @@ $result:
         ...        
     ]    
 ```
-#### Result Array
+#### Debug Result Array
 ```
 $result[
           'recordList' => array(),

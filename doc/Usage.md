@@ -27,8 +27,10 @@ the codes inside the field.
 4. Rename the configuration file to `config.json`
 5. Prepare a [template](Template.md) you will use to load and display the data
 
+### Error Handling
+This package uses Filp\Whoops to handle errors.
 
 ##
-Previous: [Installation](Installation.md) | Next: [RecordParser Class](RecordParser.md)
+Previous: [Installation](Installation.md) | Next: [Page Map](PageMap.md)
 
 [Home](../README.md)

@@ -33,7 +33,7 @@ See the [composer website](https://getcomposer.org) for instructions
 on installing composer.
 
 ##
-Previous: [Overview](Overview.md) | Next: [Usage](Usage.md)
+Previous: [Overview](Overview.md) | Next: [Configuration](Config.md)
 
 [Home](../README.md)
 

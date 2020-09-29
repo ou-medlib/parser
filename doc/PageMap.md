@@ -87,5 +87,6 @@ with the same group name, and apply the codes as appropriate in
 the [Record Data](RecordData.md) file.
 
 ##
+Previous: [Usage](Usage.md) | Next: [Record Data](RecordData.md)
 
-
+[Home](../README.md)

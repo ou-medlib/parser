@@ -6,6 +6,8 @@ Author: [Keith Engwall <engwall@oakland.edu>](mailto:engwall@oakland.edu)
 License: [MIT](https://opensource.org/licenses/MIT)
 
 ## Overview
+* [Dependencies](#Dependencies)
+
 The OUWBMedlib\Parser is a parsing engine that
 will transform a CSV file of records into a validated array
 structured for display of the records in set of grouped lists

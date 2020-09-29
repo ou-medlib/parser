@@ -156,4 +156,6 @@ method, and the data being validated is passed to a validate() submethod:
 
 
 ##
+Previous: [Record Data](RecordData.md) | Next: [RecordParser Class](RecordParser.md)
 
+[Home](../README.md)

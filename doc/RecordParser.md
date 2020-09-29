@@ -6,6 +6,8 @@ Author: [Keith Engwall <engwall@oakland.edu>](mailto:engwall@oakland.edu)
 License: [MIT](https://opensource.org/licenses/MIT)
 
 ## RecordParser class
+* [Overview](#Overview)
+* [Interface](#Interface)
 
 ### Overview
 The `RecordsParser` class is the only class that you 
@@ -64,6 +66,6 @@ a [template](Template.md) containing the layout for the data.
 
 
 ##
-Previous: [Usage](Usage.md) | Next: [Result Array](ResultArray.md)
+Previous: [Config File](Config.md) | Next: [Result Array](ResultArray.md)
 
 [Home](../README.md)
