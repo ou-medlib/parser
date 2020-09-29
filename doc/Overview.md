@@ -36,8 +36,20 @@ they are assigned, as well as a list of any records that
 fail a validation check, along with the field that failed
 the check.
 
+### Dependencies
+The OUWBMedlib\Parser package requires the following packages
+be loaded in order to run:
+
+* PHP, version 7.2+
+
+* League\Csv, version 9.6+
+
+* Respect\Validation, version 2.0+
+
+* Filp\Whoops, version 2.7+
+
+* Ext-JSON
+
 ##
 
-Previous: [Home](../README.md)
-
-Next: [Installation](Installation.md)
+Previous: [Home](../README.md) | Next: [Installation](Installation.md)
