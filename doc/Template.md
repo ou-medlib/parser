@@ -26,18 +26,25 @@ your content with styles is beyond the scope of this document.
 ### Including the Code
 In order to use OUWBMedlib\Parser package, you must load the package 
 and its dependencies. If you have installed the package from an existing
-composer package (e.g. from a framework), chances are that all packages
-will already be autoloaded, and you should be able to simply call the 
-`RecordsParser::parseRecords()` method, as described below.
+composer package (e.g. from a framework), the autoloader will be updated
+automatically on installation.
 
 You can also include the autoload.php file directly in your page with
 the following statement, typically in the <head>
 
 ```php
 <?php
-    include path/to/autoload.php; //by default, vendor/autoload.php
+    include "vendor/autoload.php";
 ?>
 ``` 
+
+You will also need to `use` the `RecordsParser` class:
+
+```php
+<?php
+    use OUWBMedlib\Parser\RecordsParser;
+?>
+```
 
 ### Retrieving the Data
 
@@ -47,8 +54,12 @@ file to the `RecordsParser::parseRecords()` method:
 
 ```php
 <?php
-    $pageId = "Pg2"; // use the ID for the current page
-    $recordLists = RecordsParser::parseRecords($pageId);
+    // use the ID for the current page in the Page Map
+    $pageID = "YR1";
+    // use the path to the configuration file
+    // (this example uses the config.json.example file)
+    $path = __DIR__."/vendor/ouwbmedlib/parser/src/parser/config.json.example";
+    $recordLists = RecordsParser::parseRecords($pageID, $path);
 ?>
 ```
 
@@ -63,6 +74,7 @@ echo the contents within your desired template structure.
 Below is a basic example in PHP:
 
 ```php
+<?php
 if ($pageID == 'DEBUG') {  // print in debug mode
     // print record report
     printTable("Record Report", $recordLists['recordList']);
@@ -72,7 +84,7 @@ if ($pageID == 'DEBUG') {  // print in debug mode
   // loop through groups
   foreach ($recordLists as $groupID => $group) {
     // print list using the group name as a title
-    printTable($data['groupName'], $data['recordList']);
+    printTable($group['groupName'], $group['recordList']);
   }
 }
 
@@ -130,6 +142,8 @@ function printTable($table_name, $array) {
         } 
     }
     echo "</table>\n";
+}
+?>
 ```
 Frameworks may use other template lanugages, such as Twig, but
 the logic structures would be similar.  You can then use CSS and/or 

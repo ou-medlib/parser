@@ -1,7 +1,7 @@
 {
   "paths": {
-    "recordData": "/../../data/records.csv.example",
-    "pageMap": "/../../data/page_map.json.example"
+    "recordData": "__DIR__./../../data/records.csv.example",
+    "pageMap": "__DIR__./../../data/page_map.json.example"
   },
   "groupBy": {
     "field": "Course",

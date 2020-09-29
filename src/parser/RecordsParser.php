@@ -63,15 +63,32 @@ class RecordsParser implements RecordsParserInterface
         $pageID = filter_var($pageIdRaw, FILTER_SANITIZE_STRING);
         $configPath = filter_var($configPathRaw, FILTER_SANITIZE_STRING);
 
+        // if path starts with __DIR__, convert to magic variable
+        if ( preg_match('/^__DIR__\.\//', $configPath) ) {
+            $configPath = __DIR__.preg_replace('/^__DIR__\./', '', $configPath);
+        }
+
         // set up error handling, read configurations, etc.
         $config = Bootstrap::bootstrap($configPath);
 
         // get pageMap data
         $mapPath = $config['paths']['pageMap'];
+
+        // if path starts with __DIR__, convert to magic variable
+        if ( preg_match('/^__DIR__\.\//', $mapPath) ) {
+            $mapPath = __DIR__.preg_replace('/^__DIR__\./', '', $mapPath);
+        }
+
         $pageMap = self::getPageMap($mapPath);
         
         // get record data
         $dataPath = $config['paths']['recordData'];
+
+        // if path starts with __DIR__, convert to magic variable
+        if ( preg_match('/^__DIR__\.\//', $dataPath) ) {
+            $dataPath = __DIR__.preg_replace('/^__DIR__\./', '', $dataPath);
+        }
+
         $recordData = self::getRecordData($dataPath, $config);
 
         // parse the record data according to the page map for the page specified by $pageID
