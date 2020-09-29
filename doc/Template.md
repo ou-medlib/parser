@@ -58,7 +58,7 @@ file to the `RecordsParser::parseRecords()` method:
     $pageID = "YR1";
     // use the path to the configuration file
     // (this example uses the config.json.example file)
-    $path = __DIR__."/vendor/ouwbmedlib/parser/src/parser/config.json.example";
+    $path = __DIR__."/config.json.example";
     $recordLists = RecordsParser::parseRecords($pageID, $path);
 ?>
 ```
