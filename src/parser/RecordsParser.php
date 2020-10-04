@@ -57,10 +57,11 @@ class RecordsParser implements RecordsParserInterface
      * @throws \Exception in DEBUG mode as a means of testing the page
      *                    after an update
      */
-    public static function parseRecords(string $pageIdRaw, string $configPathRaw=self::CONFIG_PATH): array
+    public static function parseRecords(string $pageIDRaw, string $configPathRaw=self::CONFIG_PATH): array
     {
         // sanitize inputs
-        $pageID = filter_var($pageIdRaw, FILTER_SANITIZE_STRING);
+        $pageIDRaw = preg_replace('/[^\w]/', '', $pageIDRaw);
+        $pageID = filter_var($pageIDRaw, FILTER_SANITIZE_STRING);
         $configPath = filter_var($configPathRaw, FILTER_SANITIZE_STRING);
 
         // if path starts with __DIR__, convert to magic variable
