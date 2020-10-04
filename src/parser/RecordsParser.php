@@ -260,6 +260,7 @@ class RecordsParser implements RecordsParserInterface
         // for each book in the file
         foreach ($records as $offset => $record) {
 
+
             foreach ($record as $label => $value) {
 
                 // if the field has a validation method defined, validate the value
