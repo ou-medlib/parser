@@ -32,6 +32,15 @@ class RecordsParserTest extends TestCase
     }
 
     /**
+     * testConstants() tests the constants are equal to what is expected
+     */
+    public function testConstants()
+    {
+        $this->assertEquals(realpath(__DIR__."/../../src/parser").'/config.json',RecordsParser::CONFIG_PATH);
+        $this->assertEquals('DEBUG',RecordsParser::PARSE_DEBUG);
+    }
+
+    /**
      * testInvalidPage() checks Exception when the page ID is not in the page map file
      * @throws \Exception
      */
@@ -63,12 +72,19 @@ class RecordsParserTest extends TestCase
 
     /**
      * testValidPageRequests checks that the return array contains a record with an expected key
+     * including when the pageID contains quotes or other non-alphanumeric characters
      * @throws \Exception
      */
     public function testValidPageRequests()
     {
         $this->assertArrayHasKey('invalid', RecordsParser::parseRecords("DEBUG",$this->root.'data/config.json'));
+        $this->assertArrayHasKey('invalid', RecordsParser::parseRecords("'DEBUG'",$this->root.'data/config.json'));
+        $this->assertArrayHasKey('invalid', RecordsParser::parseRecords("\"DEBUG\"",$this->root.'data/config.json'));
+        $this->assertArrayHasKey('invalid', RecordsParser::parseRecords("&DEBUG&",$this->root.'data/config.json'));
         $records = RecordsParser::parseRecords("M1", $this->root.'data/config.json');
+        $this->assertStringContainsString('Anatomical',$records[0]['groupName']);
+        // test conversion of __DIR__ in input string to magic constant __DIR__
+        $records = RecordsParser::parseRecords("YR1", '__DIR__./../../src/parser/config.json.example');
         $this->assertStringContainsString('Anatomical',$records[0]['groupName']);
     }
 }
