@@ -50,54 +50,18 @@ $result:
     ...
 ]          
 ```
-
-#### Result Array
-```
-$result[<groupID>] = array();
-```
-The top level of the result array has group IDs as keys,
+The top level of the result array has **group IDs** as keys,
 and an array of group data as values.
 
-#### Group Data Array
-```
-$result[<groupID>][
-                    'groupName' => string,
-                    'recordList' => array()
-                  ];
-
-```
 The next level of the result array is the group data
 array, which has two keys:
-* `"groupName"` is a string for the name of the group
+* **`"groupName"`** is a string for the name of the group
 
-* `"recordList"` contains an array of records
+* **`"recordList"`** contains an array of records
 
-#### Record List Array
-```
-$result[<groupID>]['recordList']
-                        [0]: array(),
-                        [1]: array(),
-                        [2]: array(),
-                        ...
-```
-The next level of the result array is a list of record arrays
+The next level of the result array is a list of **record arrays**
 
-#### Record Array
-```
-$result[<groupID>]['recordList']
-                        [0][
-                            '<Field1>' => "Value1",
-                            '<Field2>' => "Value2",
-                            ...
-                        ],
-                        [1][
-                            '<Field1>' => "Value1",
-                            '<Field2>' => "Value2",
-                            ...
-                        ],
-                        ...
-```
-The lowest level of the result array contains record data
+The lowest level of the result array contains **record data**
 keyed on the field labels from the [Record Data](RecordData.md) file.
 
 ### Result Example
@@ -176,7 +140,7 @@ $result:
         ],
         ...
     ],
-    ['invalid']: [
+    invalid: [
         [
             <Field1>: "Value1",
             <Field2>: "Value2",
@@ -186,55 +150,18 @@ $result:
         ...        
     ]    
 ```
-#### Debug Result Array
-```
-$result[
-          'recordList' => array(),
-          'invalid' => array()
-       ];
-```
 The top level array has two keys
-* `"recordList"` contains all of the records
-
-* `"invalid"` contains a list of records that have 
-failed at least one of the validation checks
-
-#### Record Array for Record List
-```
-$result['recordList'][0][
-                '<Field1>' => "Value1",
-                '<Field2>' => "Value2",
-                ...
-                'groupList' => [
-                    '<groupID1>' => "groupName1",
-                    '<groupID2>' => "groupName2",
-                    ...
-                ]
-            ],
-            ...
-```
-The `'recordList'` array contains a list of records, 
+* **`"recordList"`** contains a list of records, 
 each of which has all of its original fields, plus
 a `'groupList'` field, which contains an array of the names
 of the groups to which the record belongs.  This allows you
 to display either the group ID or group name in the debug display.
 
-#### Record Array for Invalid List
-```
-$result['invalid'][0][
-             '<Field1>' => "Value1",
-             '<Field2>' => "Value2",
-             ...
-             'invalidField' => "<FieldN>"
-         ],
-         ...
-```
-The `'invalid'` array contains a list of any records that have
+* **`"invalid"`** contains a list of any records that have
 failed a validation check.  Each record has all of its
 original field, plus an `'invalidField'` field, which contains
 the label of the field whose data failed the validation check,
 in order to make it easier to identify errors in the data.
-
 
 ##
 Previous: [RecordParser Class](RecordParser.md) | Next: [Template](Template.md)
